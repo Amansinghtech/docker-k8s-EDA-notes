@@ -102,6 +102,32 @@
     kubectl drain <node-name> --ignore-daemonsets
     ```
 
+## ConfigMaps
+
+create config from file
+```bash
+kubectl create configmap my-config --from-file=<path-to-file> 
+```
+
+* **List configmaps:**
+  ```bash
+  kubectl get configmaps
+  ```
+
+* **Describe a configmap:**
+```bash
+kubectl describe configmap <configmap-name>
+```
+
+* **Delete a configmap:**
+```bash
+kubectl delete configmap <configmap-name>
+```
+* **Get configmap data:**
+```bash
+kubectl get configmap <configmap-name> -o jsonpath='{.data}'
+```
+
 ## Namespaces
 
 * **List namespaces:**
