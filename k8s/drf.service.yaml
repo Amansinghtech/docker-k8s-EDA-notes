@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: drf-practice-service
+  namespace: gimbooks
+  labels:
+    app: drf-practice
+spec:
+  type: ClusterIP
+  selector:
+    app: drf-practice
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

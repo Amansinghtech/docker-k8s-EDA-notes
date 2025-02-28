@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: drf-practice-config
+  namespace: gimbooks
+data:
+  DJANGO_DEBUG: "false"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: drf-practice-secret
+  namespace: gimbooks
+type: Opaque
+data:
+  SECRET_KEY: NG1xb1VjWlAwdjI2U1cwcDlT

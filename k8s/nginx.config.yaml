@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: gimbooks
+data:
+  nginx.conf: |
+    events {}
+    http {
+        upstream django {
+            server drf-practice-service:80;
+        }
+
+        server {
+            listen 80;
+
+            location / {
+                proxy_pass http://django;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+            }
+
+            location /static/ {
+                alias /app/static/; #adjust to your static folder.
+            }
+        }
+    }

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: gimbooks
+  labels:
+    app: nginx
+spec:
+  replicas: 1 # Adjust as needed
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf # The key from the ConfigMap
+      volumes:
+        - name: config-volume
+          configMap:
+            name: nginx-config # Name of your ConfigMap
