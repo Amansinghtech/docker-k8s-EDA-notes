@@ -1,4 +1,4 @@
-# Event-Driven Architecture (EDA) - Beginner Notes
+# Event-Driven Architecture (EDA)
 
 ## What is EDA?
 
@@ -54,3 +54,7 @@ EDA is a software design pattern where applications communicate by producing and
 ## In Short
 
 EDA is about building systems that react to things that happen, making them more flexible, scalable, and responsive.
+
+### Cheat Sheet By ByteByteGo
+reference: https://blog.bytebytego.com/p/event-driven-architectural-patterns
+![cheat-sheet](./figure-02.png)
