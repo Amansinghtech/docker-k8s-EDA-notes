@@ -10,7 +10,7 @@
 - **What make docker unique from traditional deployment?**
 **Ans ->** In traditional deployment applications are deployed on servers which has their own system software and kernel. This whole bundle makes the deployment of application more resource heavy. 
 On the other hand docker only packages required system software that is necessary to run the application and for kernel it shares it from the host machine, making it lightweight and portable.
-![image](./figure-01.png)
+![image](./Figure-01.svg)
 
 
 > **Important Note:** Docker is not a container, it's an interface that manages containers. A `Container` is a runtime instance of a `container image`.
